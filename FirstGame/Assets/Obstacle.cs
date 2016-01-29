@@ -22,8 +22,13 @@ public class Obstacle : AGComponent {
 			delay += Time.deltaTime;
 			return;
 		}
+		if(speed > 0)
+			transform.Translate (new Vector3(1, 0.25f, 0) * speed);
+		else if(speed > 0)
+			transform.Translate (new Vector3(1, -0.25f, 0) * speed);
+		else
+			transform.Translate (Vector3.right * speed);
 
-		transform.Translate (Vector3.right * speed);
 	}
 
 	void OnBecameInvisible()
