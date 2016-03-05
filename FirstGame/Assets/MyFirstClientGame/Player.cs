@@ -20,5 +20,6 @@ public class Player : PlayerController {
 		GameManager.IsGameRunning = false;
 		UIManager.pInstance.pGameMenuHandler.SetVisibility (false);
 		UIManager.pInstance.pGameOverMenuHandler.SetVisibility (true);
+		UIManager.pInstance.pGameOverMenuHandler.SetFinalScore ();
 	}
 }

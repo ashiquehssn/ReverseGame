@@ -20,6 +20,7 @@ public class ObstacleHandler : MonoBehaviour {
 		if (!GameManager.IsGameRunning)
 			return;
 		GameObject temp = Instantiate (obstaclePrefab) as GameObject;
+		temp.tag = "Obstacle";
 		Vector3 tPosition = playerCamera.ViewportToWorldPoint(new Vector3(Random.Range(0,2) , points[Random.Range(0,2)] , 0));
 		if(tPosition.x > 0)
 			tPosition.x += 2;

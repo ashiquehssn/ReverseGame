@@ -14,4 +14,18 @@ public class PauseMenuHandler : MAUI {
 		UIManager.pInstance.pGameMenuHandler.SetVisibility (true);
 		GameManager.pInstance.ResumeGame();
 	}
+
+	public void OnHomeButtonClick()
+	{
+		GameManager.IsGameRunning = false;
+		Application.LoadLevel (0);
+	}
+
+	public void OnRestartButtonClick()
+	{
+		ScoreManager._Instance.score = 0;
+		SetVisibility (false);
+		GameManager.pInstance.StartGame ();
+		UIManager.pInstance.pGameMenuHandler.SetVisibility (true);
+	}
 }

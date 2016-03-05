@@ -13,7 +13,7 @@ public abstract class PlayerController : AGComponent
 	private float mSpeed = 0.5f;
 	private float mBrakeFactor = 1;
 	private float timeFactor;
-	private float mSpeedIncreamentFactor = 0;
+	private float mSpeedIncreamentFactor = 0.2f;
 
 	protected void Init()
 	{
@@ -23,13 +23,15 @@ public abstract class PlayerController : AGComponent
 	protected void Move (bool inIsBraking) 
 	{
 		if (inIsBraking)
-			mBrakeFactor = Mathf.MoveTowards (mBrakeFactor, 0, brakeTime * Time.deltaTime);
+			mBrakeFactor = Mathf.MoveTowards (mBrakeFactor, 0, brakeTime * Time.deltaTime * 0.2f);
 		else
 		{
 			SpeedAcceleration ();
 			mBrakeFactor = 1;
 		}
+		print (mBrakeFactor);
 		transform.Translate (Vector3.up * mSpeed * mBrakeFactor);
+		print ("speed " + Vector3.up * mSpeed * mBrakeFactor );
 
 	}
 
@@ -37,6 +39,7 @@ public abstract class PlayerController : AGComponent
 	{
 		mSpeedIncreamentFactor = Mathf.MoveTowards (mSpeedIncreamentFactor, 1, timeFactor * Time.deltaTime);
 		mSpeed = Mathf.Lerp(minSpeed, maxSpeed, mSpeedIncreamentFactor);
+		print ("mSpeed " + mSpeed);
 	}
 
 
