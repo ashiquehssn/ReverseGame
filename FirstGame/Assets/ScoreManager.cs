@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour {
 
-	int score = 0;
+	public int score = 0;
 //	public GUIText ScoreText;
 	public Text m_scoreText;
 	public Text m_highScoreText;
@@ -33,36 +33,18 @@ public class ScoreManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-//		if (GameManager.IsGameRunning && count >= 15) {
-//			setScore();
-//		}
-//		if (count == 15)
-//			count = 0;
-//		else
-//			count++;
-	}
-
-	public int GetScore()
-	{
-		return score;
-	}
-
-	public void IncreaseScoreByOne()
-	{
-		score++;
-		setScore ();
-	} 
-
-	public void ResetTheScore()
-	{
-		score = 0;
-		setScore ();
+		if (GameManager.IsGameRunning && count >= 15) {
+			score++;
+			setScore();
+		}
+		if (count == 15)
+			count = 0;
+		else
+			count++;
 	}
 
 	void setScore()
 	{
-		if (m_scoreText == null || m_highScoreText == null)
-			return;
 		m_scoreText.text = "" + score;
 		if(PlayerPrefs.GetInt("HighScore") < score)
 		{

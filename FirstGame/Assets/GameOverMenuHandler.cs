@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-using MyFramework;
 
 public class GameOverMenuHandler : MAUI {
 
@@ -18,13 +17,13 @@ public class GameOverMenuHandler : MAUI {
 
 	public void SetFinalScore()
 	{
-		m_scoreText.text = "Score : " + ScoreManager._Instance.GetScore();
+		m_scoreText.text = "Score : " + ScoreManager._Instance.score;
 	}
 
 	public void OnRestartButtonClick()
 	{
+		ScoreManager._Instance.score = 0;
 		DestroyObstacle ();
-		ScoreManager._Instance.ResetTheScore ();
 
 		SetVisibility (false);
 		GameManager.pInstance.StartGame ();
@@ -40,7 +39,6 @@ public class GameOverMenuHandler : MAUI {
 			if(obj[i] != null)
 				Destroy(obj[i]);
 		}
-
 	}
 
 

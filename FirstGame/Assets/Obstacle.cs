@@ -6,11 +6,8 @@ public class Obstacle : AGComponent {
 	private float initialDelay;
 	private float delay;
 
-	Player PlayerInstance;
-
 	void Start()
 	{
-		PlayerInstance =  GameObject.Find ("Player").GetComponent<Player>();
 		speed = Random.Range (0.2f, 0.4f);
 		initialDelay = Random.Range (0.0f , 0.05f);
 		if (transform.position.x > 0)
@@ -36,9 +33,6 @@ public class Obstacle : AGComponent {
 
 	void OnBecameInvisible()
 	{
-		if(PlayerInstance.GetBrakeFactore() > 0.9f)
-			ScoreManager._Instance.IncreaseScoreByOne ();
 		Destroy (gameObject);
 	}
-
 }
