@@ -23,9 +23,22 @@ public class PauseMenuHandler : MAUI {
 
 	public void OnRestartButtonClick()
 	{
-		ScoreManager._Instance.score = 0;
+		DestroyObstacle ();
+		ScoreManager._Instance.ResetTheScore ();
 		SetVisibility (false);
 		GameManager.pInstance.StartGame ();
 		UIManager.pInstance.pGameMenuHandler.SetVisibility (true);
+	}
+
+	void DestroyObstacle()
+	{
+		GameObject [] obj = GameObject.FindGameObjectsWithTag ("Obstacle");
+		
+		for (int i = 0; i < obj.Length; i++) 
+		{
+			if(obj[i] != null)
+				Destroy(obj[i]);
+		}
+		
 	}
 }

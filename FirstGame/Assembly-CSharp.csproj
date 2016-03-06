@@ -46,11 +46,18 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\AGComponent.cs" />
+     <Compile Include="Assets\AnimationsScripts\CameraHandler.cs" />
+     <Compile Include="Assets\AnimationsScripts\FrameAnimation.cs" />
+     <Compile Include="Assets\AnimationsScripts\MoveLeft.cs" />
+     <Compile Include="Assets\AnimationsScripts\MoveLeftRight.cs" />
+     <Compile Include="Assets\AnimationsScripts\RotateLeaf.cs" />
+     <Compile Include="Assets\AnimationsScripts\UpDownAnimation.cs" />
      <Compile Include="Assets\GameManager.cs" />
      <Compile Include="Assets\GameMenuHandler.cs" />
      <Compile Include="Assets\GameOverMenuHandler.cs" />
      <Compile Include="Assets\MAUI.cs" />
      <Compile Include="Assets\MainMenuHandler.cs" />
+     <Compile Include="Assets\MyFirstClientGame\BirdFlyingBg\FlyingBird.cs" />
      <Compile Include="Assets\MyFirstClientGame\Path.cs" />
      <Compile Include="Assets\MyFirstClientGame\Player.cs" />
      <Compile Include="Assets\MyFirstClientGame\PlayerController.cs" />
@@ -59,6 +66,10 @@
      <Compile Include="Assets\Obstacle.cs" />
      <Compile Include="Assets\ObstacleHandler.cs" />
      <Compile Include="Assets\PauseMenuHandler.cs" />
+     <Compile Include="Assets\Plugin\BazierCurve.cs" />
+     <Compile Include="Assets\Plugin\Bazier_Curve.cs" />
+     <Compile Include="Assets\Plugin\FpsScr.cs" />
+     <Compile Include="Assets\Plugin\MouseHandler.cs" />
      <Compile Include="Assets\ScoreManager.cs" />
      <Compile Include="Assets\UIManager.cs" />
  <Reference Include="UnityEngine.UI">
@@ -66,6 +77,9 @@
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>E:/Program Files/Unity5/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="MyFramework">
+ <HintPath>E:/Git/ReverseGame/FirstGame/Assets/Plugin/MyFramework.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Cecil">
  <HintPath>E:/Program Files/Unity5/Unity/Editor/Data/Managed/Mono.Cecil.dll</HintPath>
